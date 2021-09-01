@@ -225,7 +225,7 @@ func (g *Module) GenerateAndroidBuildActions(ctx android.ModuleContext) {
 			return
 		}
 		for _, path := range paths {
-			g.inputDeps = append(g.inputDeps(ctx, path))
+			
 		}
 	}
 
