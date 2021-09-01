@@ -224,6 +224,9 @@ func (g *Module) GenerateAndroidBuildActions(ctx android.ModuleContext) {
 			ctx.ModuleErrorf("unable to glob %s: %s", globPath, err.Error())
 			return
 		}
+		for _, path := range paths {
+			g.inputDeps = append(g.inputDeps(ctx, path))
+		}
 	}
 
 	cmd := customExpandVariables(ctx, String(g.properties.Cmd))
